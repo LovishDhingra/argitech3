@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["src/**/*", "mockupPreviewPlugin.ts", "vite.config.ts"],
+  "exclude": ["node_modules", "build", "dist", "**/*.test.ts"],
+  "compilerOptions": {
+    "noEmit": true,
+    "lib": ["es2022", "dom", "dom.iterable"],
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "allowImportingTsExtensions": true,
+    "types": ["node", "vite/client"],
+    "paths": {
+      "@/lib/utils": ["../farmer-market/src/lib/utils.ts"],
+      "@/components/ui/input": ["../farmer-market/src/components/ui/input.tsx"],
+      "@/components/ui/textarea": ["../farmer-market/src/components/ui/textarea.tsx"],
+      "@/hooks/use-mobile": ["../farmer-market/src/hooks/use-mobile.tsx"],
+      "@/components/ui/separator": ["../farmer-market/src/components/ui/separator.tsx"],
+      "@/components/ui/sheet": ["../farmer-market/src/components/ui/sheet.tsx"],
+      "@/components/ui/skeleton": ["../farmer-market/src/components/ui/skeleton.tsx"],
+      "@/components/ui/tooltip": ["../farmer-market/src/components/ui/tooltip.tsx"],
+      "@/components/ui/toast": ["../farmer-market/src/components/ui/toast.tsx"],
+      "@/*": ["./src/*"]
+    }
+  }
+}

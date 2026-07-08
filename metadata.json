@@ -1,0 +1,6 @@
+{
+  "name": "FarmSphere",
+  "description": "Farmer Market Intelligence Platform - Real-time mandi prices, market forecasting, crop yield modeling, government scheme suggestions and AI agricultural chat assistance.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

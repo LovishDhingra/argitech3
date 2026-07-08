@@ -1,0 +1,37 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "workspaces": [
+    "artifacts/*",
+    "lib/*",
+    "scripts"
+  ],
+  "scripts": {
+    "build": "npm run typecheck && npm run build --workspaces --if-present",
+    "typecheck:libs": "tsc --build",
+    "typecheck": "npm run typecheck:libs && npm run typecheck --workspaces --if-present",
+    "dev": "npm run build --workspace=@workspace/farmer-market && PORT=3000 npm run dev --workspace=@workspace/api-server",
+    "start": "node --enable-source-maps ./artifacts/api-server/dist/index.mjs"
+  },
+  "private": true,
+  "pnpm": {
+    "allowedDeprecatedVersions": {
+      "recharts": "*",
+      "@esbuild-kit/esm-loader": "*",
+      "@esbuild-kit/core-utils": "*",
+      "node-domexception": "*"
+    }
+  },
+  "devDependencies": {
+    "@rollup/rollup-win32-x64-msvc": "^4.62.2",
+    "lightningcss-win32-x64-msvc": "^1.32.0",
+    "prettier": "^3.8.1",
+    "typescript": "~5.9.2"
+  },
+  "dependencies": {
+    "@google/genai": "^2.10.0",
+    "@types/leaflet": "^1.9.21",
+    "leaflet": "^1.9.4"
+  }
+}
